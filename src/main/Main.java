@@ -1,11 +1,13 @@
 package main;
 
+//import org.testng.annotations.Test;
+
 public class Main {
 
+	// TODO JavaDoc everything
 	public static void main(String[] args) {
-		System.out.println("Hello World!");
-
-		TweetCollection coll = TweetFileReader.getTweetsFromFile("src/data/training.txt");
+		TweetCollection coll = TweetFileUtil.getTweetsFromFile("src/data/test.txt");
+		TweetFileUtil.writeCollectionToFile(coll);
 	}
 
 }

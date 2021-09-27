@@ -2,7 +2,7 @@ package main;
 
 public class Tweet {
 	private String text;
-	private int id;
+	private long id;
 	private Polarity polarity;
 	private String author;
 
@@ -14,11 +14,11 @@ public class Tweet {
 		this.text = text;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
@@ -37,5 +37,18 @@ public class Tweet {
 	public void setAuthor(String author) {
 		this.author = author;
 	}
+	
+	public String toString() {
+		return polarity.getValue() + "," + Long.toString(id) + "," + author + "," + text + "\n";
+	}
 
+	public boolean equals(Tweet tweet) {
+		return (
+			this.id == tweet.getId() && 
+			this.author.equals(tweet.getAuthor()) && 
+			this.polarity == tweet.getPolarity() && 
+			this.text.equals(tweet.getText())
+		);
+	}
+	
 }

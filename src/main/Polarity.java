@@ -1,7 +1,7 @@
 package main;
 
 public enum Polarity {
-	NEGATIVE(0), NEUTRAL(2), POSITIVE(4);
+	NEGATIVE(0), NEUTRAL(2), POSITIVE(4), INVALID(-1);
 
 	private int value;
 
@@ -16,20 +16,22 @@ public enum Polarity {
 	public void setValue(int value) {
 		this.value = value;
 	}
-	
+
 	public static Polarity valueOf(char value) {
-		return Polarity.valueOf((int) value);
+		return Polarity.valueOf(Character.getNumericValue(value));
 	}
-	
-	// TODO Find a prettier way to write this
+
 	public static Polarity valueOf(int value) {
-		Polarity[] polarities = Polarity.values();
-		int current = 0;
-		
-		while (polarities[current].value != value) {
-			current++;
+		for (Polarity current : Polarity.values()) {
+			if (current.value == value) {
+				return current;
+			}
 		}
 
-		return polarities[current];
+		return Polarity.INVALID;
+	}
+
+	public static Polarity[] validValues() {
+		return new Polarity[] { Polarity.NEGATIVE, Polarity.NEUTRAL, Polarity.POSITIVE };
 	}
 }
