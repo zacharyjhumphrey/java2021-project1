@@ -8,119 +8,21 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num attn">3</td><td class="num">99</td><td></td><td></td></tr>
+<tr><th colspan="8">Command line suite</th></tr>
+<tr><td><a href="#t0">Command line test</a></td><td class="num">6</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">119</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="3">test.TweetCollectionTest</td><td><a href="#m0">testAddTweet</a></td><td rowspan="1">1632701550390</td><td rowspan="1">18</td></tr><tr class="failedeven"><td><a href="#m1">testGetTweetsByUser</a></td><td rowspan="1">1632701550425</td><td rowspan="1">5</td></tr><tr class="failedeven"><td><a href="#m2">testRemoveTweet</a></td><td rowspan="1">1632701550436</td><td rowspan="1">3</td></tr><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">test.TweetCollectionTest</td><td><a href="#m3">testGetAllTweetIds</a></td><td rowspan="1">1632701550416</td><td rowspan="1">4</td></tr><tr class="passedeven"><td><a href="#m4">testGetTweetById</a></td><td rowspan="1">1632701550421</td><td rowspan="1">3</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Command line suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Command line test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">test.TweetCollectionTest</td><td><a href="#m0">testDuplicateTweetFunctionality</a></td><td rowspan="1">1632792288350</td><td rowspan="1">5</td></tr><tr><th colspan="4">Command line test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="6">test.TweetCollectionTest</td><td><a href="#m1">testAddTweet</a></td><td rowspan="1">1632792288331</td><td rowspan="1">15</td></tr><tr class="passedeven"><td><a href="#m2">testGetAllTweetIds</a></td><td rowspan="1">1632792288356</td><td rowspan="1">6</td></tr><tr class="passedeven"><td><a href="#m3">testGetTweetById</a></td><td rowspan="1">1632792288363</td><td rowspan="1">5</td></tr><tr class="passedeven"><td><a href="#m4">testGetTweetsByUser</a></td><td rowspan="1">1632792288368</td><td rowspan="1">3</td></tr><tr class="passedeven"><td><a href="#m5">testRandomFunctionsFromTweetCollection</a></td><td rowspan="1">1632792288371</td><td rowspan="1">3</td></tr><tr class="passedeven"><td><a href="#m6">testRemoveTweet</a></td><td rowspan="1">1632792288375</td><td rowspan="1">2</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">test.TweetCollectionTest#testAddTweet</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
-	at org.testng@7.4.0/org.testng.Assert.fail(Assert.java:99)
-	at org.testng@7.4.0/org.testng.Assert.failNotEquals(Assert.java:1037)
-	at org.testng@7.4.0/org.testng.Assert.assertTrue(Assert.java:45)
-	at org.testng@7.4.0/org.testng.Assert.assertTrue(Assert.java:55)
-	at project1/test.TweetCollectionTest.testAddTweet(TweetCollectionTest.java:34)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.testng@7.4.0/org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng@7.4.0/org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng@7.4.0/org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng@7.4.0/org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng@7.4.0/org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng@7.4.0/org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng@7.4.0/org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng@7.4.0/org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+<h2>Command line test</h2><h3 id="m0">test.TweetCollectionTest#testDuplicateTweetFunctionality</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: did not expect [xvZi3CL7Ze2ekD6CqlaI1ememTKVIfbsir0jGcPZpqxC23xN10sfPNqFYJ6u7vVkzW4W6FEqzscsEyoTtUHIHdRG8RxAItKF5JNo] but found [xvZi3CL7Ze2ekD6CqlaI1ememTKVIfbsir0jGcPZpqxC23xN10sfPNqFYJ6u7vVkzW4W6FEqzscsEyoTtUHIHdRG8RxAItKF5JNo]
+	at project1/test.TweetCollectionTest.testDuplicateTweetFunctionality(TweetCollectionTest.java:106)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng@7.4.0/org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng@7.4.0/org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng@7.4.0/org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng@7.4.0/org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng@7.4.0/org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng@7.4.0/org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng@7.4.0/org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng@7.4.0/org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng@7.4.0/org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng@7.4.0/org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng@7.4.0/org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng@7.4.0/org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">test.TweetCollectionTest#testGetTweetsByUser</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
-	at org.testng@7.4.0/org.testng.Assert.fail(Assert.java:99)
-	at org.testng@7.4.0/org.testng.Assert.failNotEquals(Assert.java:1037)
-	at org.testng@7.4.0/org.testng.Assert.assertTrue(Assert.java:45)
-	at org.testng@7.4.0/org.testng.Assert.assertTrue(Assert.java:55)
-	at project1/test.TweetCollectionTest.testGetTweetsByUser(TweetCollectionTest.java:79)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.testng@7.4.0/org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng@7.4.0/org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng@7.4.0/org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng@7.4.0/org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng@7.4.0/org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng@7.4.0/org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng@7.4.0/org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng@7.4.0/org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng@7.4.0/org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng@7.4.0/org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng@7.4.0/org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng@7.4.0/org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng@7.4.0/org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng@7.4.0/org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng@7.4.0/org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng@7.4.0/org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng@7.4.0/org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng@7.4.0/org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng@7.4.0/org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng@7.4.0/org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">test.TweetCollectionTest#testRemoveTweet</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [1] but found [0]
-	at org.testng@7.4.0/org.testng.Assert.fail(Assert.java:99)
-	at org.testng@7.4.0/org.testng.Assert.failNotEquals(Assert.java:1037)
-	at org.testng@7.4.0/org.testng.Assert.assertEqualsImpl(Assert.java:140)
-	at org.testng@7.4.0/org.testng.Assert.assertEquals(Assert.java:122)
-	at org.testng@7.4.0/org.testng.Assert.assertEquals(Assert.java:907)
-	at org.testng@7.4.0/org.testng.Assert.assertEquals(Assert.java:917)
-	at project1/test.TweetCollectionTest.testRemoveTweet(TweetCollectionTest.java:51)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.testng@7.4.0/org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng@7.4.0/org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng@7.4.0/org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng@7.4.0/org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng@7.4.0/org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng@7.4.0/org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng@7.4.0/org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng@7.4.0/org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng@7.4.0/org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng@7.4.0/org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng@7.4.0/org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng@7.4.0/org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng@7.4.0/org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng@7.4.0/org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng@7.4.0/org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng@7.4.0/org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng@7.4.0/org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng@7.4.0/org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng@7.4.0/org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng@7.4.0/org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">test.TweetCollectionTest#testGetAllTweetIds</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">test.TweetCollectionTest#testGetTweetById</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+	at project1/test.Main.main(Main.java:15)
+... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">test.TweetCollectionTest#testAddTweet</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">test.TweetCollectionTest#testGetAllTweetIds</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">test.TweetCollectionTest#testGetTweetById</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">test.TweetCollectionTest#testGetTweetsByUser</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">test.TweetCollectionTest#testRandomFunctionsFromTweetCollection</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">test.TweetCollectionTest#testRemoveTweet</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

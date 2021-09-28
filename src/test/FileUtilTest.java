@@ -1,15 +1,5 @@
 package test;
 
-import org.testng.annotations.Test;
-
 public class FileUtilTest {
-	@Test
-	public void testFileParsing() {
-		
-	}
-	
-	@Test 
-	public void testFileOutput() {
-		
-	}
+	// TODO Think about what tests would go well here
 }

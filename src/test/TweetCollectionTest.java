@@ -14,12 +14,13 @@ import main.Tweet;
 import main.TweetCollection;
 import main.TweetFileUtil;
 
+// TODO Doc me
 public class TweetCollectionTest {
-	private TestFile testFile;
+	private TestDataGenerator testFile;
 	
 	@BeforeSuite
 	public void beforeSuite() {
-		testFile = new TestFile();
+		testFile = new TestDataGenerator();
 	}
 
 	@Test
@@ -50,7 +51,13 @@ public class TweetCollectionTest {
 		TweetCollection coll = this.getTestTweets();
 		long tweetToBeRetrievedId = coll.getRandomId();
 		Tweet tweetFromFile = TweetFileUtil.getTweetById(this.testFile.getPath(), tweetToBeRetrievedId);
-		Tweet tweetFromCollection = coll.getTweetById(tweetToBeRetrievedId);
+		Tweet tweetFromCollection = null;
+		try {
+			tweetFromCollection = coll.getTweetById(tweetToBeRetrievedId);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		// May need to add an assertNotNull here
 		assertTrue(tweetFromFile.equals(tweetFromCollection));
 	}
 
@@ -73,17 +80,38 @@ public class TweetCollectionTest {
 		}
 	}
 
+	/**
+	 * 
+	 * This test grabs a random tweet id from the collection
+	 * then it replaces the tweet in the collection with a 
+	 * new tweet. 
+	 * The old tweet's information should be replaced by the 
+	 * new tweet's information.
+	 */
 	@Test
 	public void testDuplicateTweetFunctionality() {
 		TweetCollection coll = this.getTestTweets();
 		Long alreadyExistingTweetId = coll.getRandomId();
-		Tweet previousTweet = coll.getTweetById(alreadyExistingTweetId);
+		Tweet previousTweet = null;
+		try {
+			previousTweet = coll.getTweetById(alreadyExistingTweetId);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 		Tweet tweetToReplace = this.testFile.generateNewTweet();
+		Tweet newTweet = null;
 		tweetToReplace.setId(alreadyExistingTweetId);
 		coll.addTweet(tweetToReplace);
+
+		try {
+			newTweet = coll.getTweetById(alreadyExistingTweetId);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		
 		assertTrue(coll.containsTweet(alreadyExistingTweetId));
 		assertEquals(previousTweet.getId(), tweetToReplace.getId());
-		assertNotEquals(previousTweet.getText(), coll.getTweetById(alreadyExistingTweetId).getText());
+		assertNotEquals(previousTweet.getText(), newTweet.getText());
 	}
 	
 	@Test

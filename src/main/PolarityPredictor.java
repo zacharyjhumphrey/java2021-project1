@@ -3,12 +3,13 @@ package main;
 public class PolarityPredictor {
 	
 	public static double predictMany(TweetCollection coll) {
-		int correct = 0;
+		double correct = 0;
 		
 		for (Tweet tweet : coll) {
 			Polarity prediction = PolarityPredictor.predictOne(tweet);
+			Polarity tweetPolarity = tweet.getPolarity();
 			
-			if (tweet.getPolarity() == prediction) {
+			if (tweetPolarity == prediction) {
 				correct++;
 			}
 		}
@@ -17,6 +18,6 @@ public class PolarityPredictor {
 	}
 	
 	public static Polarity predictOne(Tweet tweet) {
-		return Polarity.INVALID;
+		return Polarity.validValues()[(int) (Math.random() * 3)];
 	}
 }

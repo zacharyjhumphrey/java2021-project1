@@ -8,8 +8,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
+// TODO Move external jars into their own folders
+// TODO Doc me
 public abstract class TweetFileUtil {
-	private static final String DEFAULT_OUTPUT_DIR = "src/data/output.txt";
+	private static final String OUTPUT_DIR = "src/data/";
 
 	public static TweetCollection getTweetsFromFile(String pathToInput) {
 		TweetCollection coll = new TweetCollection();
@@ -94,11 +96,12 @@ public abstract class TweetFileUtil {
 	}
 
 	public static void writeCollectionToFile(TweetCollection coll) {
-		TweetFileUtil.writeCollectionToFile(coll, DEFAULT_OUTPUT_DIR);
+		TweetFileUtil.writeCollectionToFile(coll, OUTPUT_DIR + coll.getName());
 	}
 
 	public static void writeCollectionToFile(TweetCollection coll, String dir) {
 		ArrayList<Tweet> tweets = coll.getAllTweets();
+		
 		try {
 			FileWriter fw = new FileWriter(dir);
 
@@ -128,7 +131,6 @@ public abstract class TweetFileUtil {
 		return newTweet;
 	}
 
-	// TODO Remove dups
 	public static ArrayList<Tweet> getTweetsByAuthor(String pathToInput, String author) {
 		HashSet<Long> dups = new HashSet<Long>();
 		HashMap<Long, Tweet> authorTweets = new HashMap<Long, Tweet>();

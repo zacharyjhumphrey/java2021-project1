@@ -12,7 +12,7 @@ import main.Tweet;
  * be a bad idea, but maybe fetching random tweets off the web would be a better idea
  * I may also be able to pull in random values from the tweet info
  */
-public class TestFile {
+public class TestDataGenerator {
 	private ArrayList<String> authors;
 	private String pathToFile;
 	private static final long TOTAL_TWEETS = 1;
@@ -21,8 +21,8 @@ public class TestFile {
 	private static final long NUMBER_OF_DUPLICATES = 3;
 	private static final long NUMBER_OF_AUTHORS = 8;
 	
-	public TestFile() {
-		this.authors = TestFile.generateAuthors();
+	public TestDataGenerator() {
+		this.authors = TestDataGenerator.generateAuthors();
 		this.pathToFile = this.generateTestFile();
 	}
 	
@@ -35,12 +35,13 @@ public class TestFile {
 	}
 
 	private String generateTestFile() {
+		// TODO Timestamp me
 		String path = "src/data/test-for-today.txt";
 
 		try {
 			FileWriter fw = new FileWriter(path);
 
-			for (long i = 0; i < TestFile.TOTAL_TWEETS; i++) {
+			for (long i = 0; i < TestDataGenerator.TOTAL_TWEETS; i++) {
 				Tweet newTweet = this.generateNewTweet();
 				fw.write(newTweet.toString());
 			}
@@ -57,18 +58,18 @@ public class TestFile {
 	public Tweet generateNewTweet() {
 		Tweet newTweet = new Tweet();
 		
-		newTweet.setId(TestFile.generateRandomId());
+		newTweet.setId(TestDataGenerator.generateRandomId());
 		newTweet.setAuthor(this.getRandomAuthor());
-		newTweet.setText(TestFile.generateRandomText());
-		newTweet.setPolarity(TestFile.generateRandomPolarity());
+		newTweet.setText(TestDataGenerator.generateRandomText());
+		newTweet.setPolarity(TestDataGenerator.generateRandomPolarity());
 		
 		return newTweet;
 	}
 	
 	private static ArrayList<String> generateAuthors() {
 		ArrayList<String> auths = new ArrayList<>();
-		for (int i = 0; i < TestFile.NUMBER_OF_AUTHORS; i++) {
-			auths.add(TestFile.generateRandomAuthor());
+		for (int i = 0; i < TestDataGenerator.NUMBER_OF_AUTHORS; i++) {
+			auths.add(TestDataGenerator.generateRandomAuthor());
 		}
 		return auths;
 	}
@@ -78,18 +79,20 @@ public class TestFile {
 	}
 
 	private static String generateRandomAuthor() {
-		return TestFile.generateRandomString((int) (Math.random() * 20) + 1);
+		return TestDataGenerator.generateRandomString((int) (Math.random() * 20) + 1);
 	}
 
 	private static String generateRandomText() {
-		return TestFile.generateRandomString((int) (Math.random() * 120) + 40);
+		return TestDataGenerator.generateRandomString((int) (Math.random() * 120) + 40);
 	}
 
+	// TODO Fix exports problem
 	private static Polarity generateRandomPolarity() {
-		return Polarity.validValues()[(int) (Math.random() * 2) + 1];
+		return Polarity.validValues()[(int) (Math.random() * 3)];
 	}
 
 	private static String generateRandomString(int len) {
+		// TODO Add special characters
 		String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvxyz";
 		StringBuilder sb = new StringBuilder(len);
 
