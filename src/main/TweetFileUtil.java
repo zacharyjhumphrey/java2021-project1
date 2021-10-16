@@ -96,7 +96,7 @@ public abstract class TweetFileUtil {
 	}
 
 	public static void writeCollectionToFile(TweetCollection coll) {
-		TweetFileUtil.writeCollectionToFile(coll, OUTPUT_DIR + coll.getName());
+		TweetFileUtil.writeCollectionToFile(coll, OUTPUT_DIR + coll.getName() + ".txt");
 	}
 
 	public static void writeCollectionToFile(TweetCollection coll, String dir) {

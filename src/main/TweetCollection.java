@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * This class is used to store and handle multiple tweets
@@ -70,6 +71,21 @@ public class TweetCollection implements Iterable<Tweet> {
 		return new ArrayList<Tweet>(idMap.values());
 	}
 
+	public String[] getAllTweetsAsString() {
+		ArrayList<Tweet> allTweets = this.getAllTweets();
+		String[] tweetsAsString = new String[allTweets.size()];
+		
+		for (int i = 0; i < allTweets.size(); i++) {
+			tweetsAsString[i] = allTweets.get(i).toString();
+		}
+		
+		return tweetsAsString;
+	}
+	
+	public String getAllTweetsAsOneString() {
+		return String.join("\n", this.getAllTweetsAsString());
+	}
+	
 	/**
 	 * TODO Test whether or not the tweet is being removed from authMap
 	 * TODO Create test making sure that author with 0 tweets is being removed from the collection
@@ -210,6 +226,18 @@ public class TweetCollection implements Iterable<Tweet> {
 	 */
 	public Tweet getRandomTweet() {
 		return idMap.get(this.getRandomId());
+	}
+	
+	public static ArrayList<Tweet> findTweetsWhoseAuthorContainsString(ArrayList<Tweet> tweets, String str) {
+		return new ArrayList<Tweet>(tweets.stream().filter(t -> t.getAuthor().contains(str)).collect(Collectors.toList()));
+	}
+	
+	public static ArrayList<Tweet> findTweetsWhoseTextContainsString(ArrayList<Tweet> tweets, String str) {
+		return new ArrayList<Tweet>(tweets.stream().filter(t -> t.getText().contains(str)).collect(Collectors.toList()));
+	}
+	
+	public static ArrayList<Tweet> findTweetsWhosePolarityMatches(ArrayList<Tweet> tweets, Polarity pol) {
+		return new ArrayList<Tweet>(tweets.stream().filter(t -> (t.getPolarity() == pol)).collect(Collectors.toList()));
 	}
 	
 	@Override
